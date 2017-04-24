@@ -8,5 +8,10 @@
 
 import Foundation
 
-print("Hello, World!")
+print(String(7, radix: 2))
+print(String(80, radix: 2))
 
+print(7^11)
+
+//print(String(11, radix: 2))
+//print(String(80, radix: 2))
