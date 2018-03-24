@@ -30,25 +30,25 @@ class HammingDistance {
         var xStr = String(x, radix: 2)
         var yStr = String(y, radix: 2)
         var remainning = 0
-        if yStr.characters.count > xStr.characters.count {
-            remainning = yStr.characters.count - xStr.characters.count
+        if yStr.count > xStr.count {
+            remainning = yStr.count - xStr.count
             var count = 0
             while count < remainning {
-                xStr.characters.insert("0", at: xStr.startIndex)
+                xStr.insert("0", at: xStr.startIndex)
                 count += 1
             }
         }else {
-            remainning = xStr.characters.count - yStr.characters.count
+            remainning = xStr.count - yStr.count
             var count = 0
             while count < remainning {
-                yStr.characters.insert("0", at: xStr.startIndex)
+                yStr.insert("0", at: xStr.startIndex)
                 count += 1
             }
         }
         remainning = 0
-        for i in 0..<yStr.characters.count {
+        for i in 0..<yStr.count {
             let index = xStr.index(xStr.startIndex, offsetBy: i)
-            if xStr.characters[index] != yStr.characters[index] {
+            if xStr[index] != yStr[index] {
                 remainning += 1
             }
         }
@@ -59,7 +59,7 @@ class HammingDistance {
         let result = x^y
         let resultStr = String(result, radix:2)
         var count = 0
-        for c in resultStr.characters {
+        for c in resultStr {
             if c == "1" {
                 count += 1
             }
